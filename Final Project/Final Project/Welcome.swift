@@ -42,14 +42,21 @@ struct Welcome: View {
         VStack{
             HStack{
                Text("Welcome")
+                .font(Font.custom("Valentine Cute", size: 20 ))
+                .foregroundColor(.purple)
                 Text(userName)
-                
+                    .font(Font.custom("Valentine Cute", size: 20 ))
+                    .foregroundColor(.orange)
                     //.padding()
             }
             
             HStack{
                Text("Target")
+                .font(Font.custom("Valentine Cute", size: 20 ))
+                .foregroundColor(.orange)
                 Text(String(TARGET))
+                    .font(Font.custom("Valentine Cute", size: 20 ))
+                    .foregroundColor(.purple)
                 
                     //.padding()
             }
@@ -57,7 +64,9 @@ struct Welcome: View {
             VStack{
                 
                 Text("You'r Steps")
+                    .font(Font.custom("Valentine Cute", size: 20 ))
                     .font(.largeTitle)
+                    .foregroundColor(.purple)
                 Button(action: {
                     counters += 1
                     if counters == TARGET {
@@ -75,26 +84,7 @@ struct Welcome: View {
                 })
                 
                 
-                // Two NavigationLink in the Bottom 
-                
-            NavigationLink(
-                destination: TargetDetailes(target: $TARGET ),
-                label: {
-                    HStack{
-                        Image(systemName: "slider.horizontal.3" )
-                        Text("Target")
-                    }
-                })
-                
-                NavigationLink(
-                    destination: ProffileDetails(userName: $userName, Age: $Age, email: $email, gender: $gender, height: $height, weight: $weight, paing: $paing, TARGET: $TARGET),
-                    label: {
-                        HStack{
-                            Image(systemName: "slider.horizontal.3" )
-                            Text("Prpfail")
-                        }
-                    })
-                
+               
 
             }
          
@@ -102,33 +92,33 @@ struct Welcome: View {
             
             //the toolBar
             
-           // VStack(alignment: .center)
-//            {
-//
-//                NavigationLink(
-//                    destination: TargetDetailes(target: $TARGET),
-//                    isActive: $showtarget) {
-//                    Text("")
-//                }
-//
-//                NavigationLink(
-//                    destination: ProffileDetails(userName: userName, Age: Age, email: email, gender: gender, height: height, weight: weight, paing: paing, TARGET: TARGET),
-//                    isActive: $showProfail) {
-//                    Text("")
-//                }
+            VStack(alignment: .center)
+            {
 
-//                NavigationLink(
-//                    destination: SignOut(),
-//                    isActive: $showsignOut) {
-//                    Text("")
-//                }
+                NavigationLink(
+                    destination: TargetDetailes(target: $TARGET),
+                    isActive: $showtarget) {
+                    Text("")
+                }
 
-           // }
+                NavigationLink(
+                    destination: ProffileDetails(userName: $userName, Age: $Age, email: $email, gender: $gender, height: $height, weight: $weight, paing: $paing, TARGET: $TARGET),
+                    isActive: $showProfail) {
+                    Text("")
+                }
+
+                NavigationLink(
+                    destination: SignOut(),
+                    isActive: $showsignOut) {
+                    Text("")
+                }
+
+            }
             
             
             
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                ToolbarItem(placement: .primaryAction) {
                     
                     Menu("Edit") {
                     Section{

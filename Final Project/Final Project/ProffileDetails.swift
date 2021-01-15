@@ -32,13 +32,9 @@ struct ProffileDetails: View {
         VStack{
             
             Text("Profail Detailes")
-           
-                .font(.largeTitle)
-                //.frame(width: 150, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .foregroundColor(.black)
-                .background(Color.black.opacity(0.3))
-                //.clipShape(Capsule())
-                .padding()
+                .foregroundColor(.purple)
+                .font(Font.custom("Valentine Cute", size: 35))
+                //.padding()
         
             TextField("Name " , text: $userName )
                 .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -64,14 +60,10 @@ struct ProffileDetails: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .foregroundColor(Color.blue)
                 .padding()
-            Stepper(value: $TARGET, in: 1...360){
-                Text("")
-            }.frame(width:300)
-            
-            .padding(.trailing,200)
+            Stepper("Steps Target", value: $TARGET, in: 1...360)
+        
             Text("\(TARGET)")
-            //Text("Target Steps")
-                //.padding()
+                .padding()
             
             Button(action: {
                 
@@ -79,10 +71,7 @@ struct ProffileDetails: View {
                 presentation.wrappedValue.dismiss()
                 
             }, label: {
-                //if paing == Color.blue{
-//                NavigationLink(
-//                                       destination: Welcome(userName: $userName, Age: $Age, email: $email, gender: $gender, height: $height, weight: $weight, paing: $paing, TARGET: $TARGET),
-//                                       label: {
+             
                 Text("Save")
                     
                     .font(.title2)
@@ -91,25 +80,15 @@ struct ProffileDetails: View {
                     .background(paing)
                     .clipShape(Capsule())
                 
-//                else {
-//                    NavigationLink(
-//                        destination: Welcome(counters: 0, Name: userName, target:$TARGET ),
-//                        label: {
-//                            Text("Saved")
-//                                .font(.title2)
-//                                .frame(width: 130, height: 90, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-//                                .foregroundColor(.white)
-//                                .background(Color.green)
-//                                .clipShape(Capsule())
-                     //   })
-//
-//                }
+
             })
             
             
-            
-        }.navigationTitle("SIGN UP ")
+        }//.navigationTitle(" SIGN UP ")
         .padding()
+            
+            
+
 }
 }
 }

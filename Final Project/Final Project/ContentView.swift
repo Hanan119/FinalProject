@@ -45,11 +45,10 @@ NavigationLink(
     destination: ProffileDetails(userName: $name, Age: $age, email: $Email, gender: $Gender, height: $h, weight: $w, paing: $paing, TARGET: $TTarget),
     label: {
         Text("SIGN UP")
-            .font(Font.custom("WinterYesterday", size: 20 ))
-            //.bold()
+            .font(Font.custom("Valentine Cute", size: 17 ))
             .frame(width: 150, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             .foregroundColor(.black)
-            .background(Color.black.opacity(0.3))
+            .background(Color.purple.opacity(0.2))
             .clipShape(Capsule())
             .padding()
 
@@ -60,10 +59,10 @@ NavigationLink(
     destination: Welcome(userName: $name, Age: $age, email: $Email, gender: $Gender, height: $h, weight: $w, paing: $paing, TARGET: $TTarget),
     label: {
         Text("SIGN IN")
-            .font(Font.custom("WinterYesterday", size: 20 ))
+            .font(Font.custom("Valentine Cute", size: 17 ))
             .frame(width: 150, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             .foregroundColor(.black)
-            .background(Color.black.opacity(0.3))
+            .background(Color.purple.opacity(0.2))
             .clipShape(Capsule())
             .padding()
     })
